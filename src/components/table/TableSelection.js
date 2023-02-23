@@ -1,5 +1,6 @@
 export class TableSelection {
     static className = 'selected'
+    
     constructor(){
        this.group = []
        this.current = null 
