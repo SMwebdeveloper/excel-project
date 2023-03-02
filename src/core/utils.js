@@ -39,16 +39,22 @@ export function toInlineStyles(styles = {}) {
       .join(';')
 }
 
-export function debounce(fn, wait){
+export function debounce(fn, wait) {
   let timeout
   return function(...args) {
     const later = () => {
       clearTimeout(timeout)
       fn.apply(this, args)
-      // fn(...args)
     }
-
     clearTimeout(timeout)
     timeout = setTimeout(later, wait)
   }
+}
+
+export function clone(obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+
+export function preventDefault(event) {
+  event.preventDefault()
 }
